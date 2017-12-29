@@ -34,3 +34,6 @@
 ! white
 *.color7:       #b7b8b9
 *.color15:      #fcfdfe
+
+! URxvt
+URxvt.scrollBar: false
