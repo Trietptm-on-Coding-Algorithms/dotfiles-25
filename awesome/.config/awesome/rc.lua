@@ -82,7 +82,7 @@ local browser      = "firefox"
 local guieditor    = "atom"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "main", "chat", "pass", "term", "misc" }
+awful.util.tagnames = { "web", "cmd", "pwd", "msg" }
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
@@ -478,7 +478,7 @@ globalkeys = awful.util.table.join(
 
     -- dmenu
     awful.key({ modkey }, "d", function ()
-        awful.spawn(string.format("rofi -modi window,drun -show drun -show-icons true",
+        awful.spawn(string.format("rofi -modi window,drun -show drun",
         beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
 		end,
         {description = "show dmenu", group = "launcher"}),
