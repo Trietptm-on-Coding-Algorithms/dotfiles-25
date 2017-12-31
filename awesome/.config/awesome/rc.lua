@@ -82,7 +82,7 @@ local browser      = "firefox"
 local guieditor    = "atom"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "web", "cmd", "pwd", "msg" }
+awful.util.tagnames = { "web", "cmd", "pwd", "msg", "etc" }
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
