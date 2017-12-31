@@ -179,7 +179,8 @@ local myawesomemenu = {
     { "manual", terminal .. " -e man awesome" },
     { "edit config", string.format("%s -e %s %s", terminal, editor, awesome.conffile) },
     { "restart", awesome.restart },
-    { "quit", function() awesome.quit() end }
+    { "quit", function() awesome.quit() end },
+    { "shutdown", terminal .. " -e systemctl poweroff" }
 }
 awful.util.mymainmenu = freedesktop.menu.build({
     icon_size = beautiful.menu_height or 16,
@@ -381,42 +382,30 @@ globalkeys = awful.util.table.join(
               {description = "show weather", group = "widgets"}),
 
     -- Brightness
-    awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("xbacklight -inc 10") end,
+    awful.key({ }, "F7", function () awful.util.spawn("xbacklight -inc 10") end,
               {description = "+10%", group = "hotkeys"}),
-    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 10") end,
+    awful.key({ }, "F8", function () awful.util.spawn("xbacklight -dec 10") end,
               {description = "-10%", group = "hotkeys"}),
 
     -- ALSA volume control
-    awful.key({ altkey }, "Up",
+    awful.key({}, "F10",
         function ()
-            os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
+            os.execute("pactl set-sink-volume @DEFAULT_SINK@ +1%")
             beautiful.volume.update()
         end,
         {description = "volume up", group = "hotkeys"}),
-    awful.key({ altkey }, "Down",
+    awful.key({}, "F9",
         function ()
-            os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
+            os.execute("pactl set-sink-volume @DEFAULT_SINK@ -1%")
             beautiful.volume.update()
         end,
         {description = "volume down", group = "hotkeys"}),
-    awful.key({ altkey }, "m",
+    awful.key({}, "F8",
         function ()
-            os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
+            os.execute("pactl set-sink-mute @DEFAULT_SINK@ toggle")
             beautiful.volume.update()
         end,
         {description = "toggle mute", group = "hotkeys"}),
-    awful.key({ altkey, "Control" }, "m",
-        function ()
-            os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "volume 100%", group = "hotkeys"}),
-    awful.key({ altkey, "Control" }, "0",
-        function ()
-            os.execute(string.format("amixer -q set %s 0%%", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "volume 0%", group = "hotkeys"}),
 
     -- MPD control
     awful.key({ altkey, "Control" }, "Up",

@@ -222,8 +222,7 @@ local bat = lain.widget.bat({
     end
 })
 
--- ALSA volume
-local volicon = wibox.widget.imagebox(theme.widget_vol)
+--[[ ALSA volume
 theme.volume = lain.widget.alsa({
     settings = function()
         if volume_now.status == "off" then
@@ -239,6 +238,19 @@ theme.volume = lain.widget.alsa({
         widget:set_markup(markup.font(theme.font, " " .. volume_now.level .. "% "))
     end
 })
+]]--
+
+-- PulseAudio volume (based on multicolor theme)
+local volicon = wibox.widget.imagebox(theme.widget_vol)
+theme.volume = lain.widget.pulse {
+    settings = function()
+        vlevel = volume_now.left .. "% "
+        if volume_now.muted == "yes" then
+            vlevel = vlevel .. " M"
+        end
+        widget:set_markup(lain.util.markup("#DDDDFF", vlevel))
+    end
+}
 
 -- Net
 local neticon = wibox.widget.imagebox(theme.widget_net)
