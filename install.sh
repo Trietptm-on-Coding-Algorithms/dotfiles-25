@@ -8,6 +8,7 @@ then
     stow --verbose=2 zsh
     stow --verbose=2 xorg
     stow --verbose=2 xdg
+    stow --verbose=2 ssh
 
     sudo stow --verbose=2 pacman -t /
     sudo stow --verbose=2 keyboard -t /
