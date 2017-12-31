@@ -7,6 +7,7 @@ then
     stow --verbose=2 vim
     stow --verbose=2 zsh
     stow --verbose=2 xorg
+    stow --verbose=2 xdg
 
     sudo stow --verbose=2 pacman -t /
     sudo stow --verbose=2 keyboard -t /

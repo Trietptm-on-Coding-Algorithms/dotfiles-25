@@ -73,4 +73,6 @@ alias :Q=' exit'
 alias :x=' exit'
 alias cd..='cd ..'
 
-export PS1="[%* - %D] %d %% "
+export PS1="[%D - %*] %d %% "
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
