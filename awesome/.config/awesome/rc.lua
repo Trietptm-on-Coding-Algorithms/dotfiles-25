@@ -622,9 +622,17 @@ awful.rules.rules = {
     { rule_any = { type = { "dialog", "normal" } },
       properties = { titlebars_enabled = true } },
 
-    -- Set Firefox to always map on the first tag on screen 1.
+    -- Set Firefox to map to web.
     { rule = { class = "Firefox" },
       properties = { screen = 1, tag = awful.util.tagnames[1] } },
+
+    -- Set KeePassX2 to map to pwd.
+    { rule = { class = "Keepassx2" },
+      properties = { screen = 1, tag = awful.util.tagnames[3] } },
+
+    -- Set Discord to map to msg.
+    { rule = { class = "discord" },
+      properties = { screen = 1, tag = awful.util.tagnames[4] } },
 
     { rule = { class = "Gimp", role = "gimp-image-window" },
           properties = { maximized = true } },
@@ -711,3 +719,7 @@ client.connect_signal("focus",
     end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+-- Autostart
+awful.spawn("firefox")
+awful.spawn("keepassx2")
