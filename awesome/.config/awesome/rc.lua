@@ -173,6 +173,8 @@ local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.ge
 beautiful.init(theme_path)
 -- }}}
 
+naughty.config.defaults['icon_size'] = 100
+
 -- {{{ Menu
 local myawesomemenu = {
     { "hotkeys", function() return false, hotkeys_popup.show_help end },
@@ -609,7 +611,7 @@ awful.rules.rules = {
 
     -- Titlebars
     { rule_any = { type = { "dialog", "normal" } },
-      properties = { titlebars_enabled = true } },
+      properties = { titlebars_enabled = false } },
 
     -- Set Firefox to map to web.
     { rule = { class = "Firefox" },
@@ -713,22 +715,7 @@ client.connect_signal("focus",
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
--- Changing spotify notifications.
-naughty.config.presets.spotify = {
-    -- if you want to disable Spotify notifications completely, return false
-    callback = function(args)
-        return true
-    end,
-
-    -- Adjust the size of the notification
-    height = 100,
-    width  = 300,
-    -- Guessing the value, find a way to fit it to the proper size later
-    icon_size = 90
-}
-table.insert(naughty.dbus.config.mapping, {{appname = "Spotify"}, naughty.config.presets.spotify})
-
 -- Autostart
-awful.spawn("firefox", {floating = true})
+awful.spawn("firefox")
 awful.spawn("keepassx2", {floating = true})
 awful.spawn("redshift")
