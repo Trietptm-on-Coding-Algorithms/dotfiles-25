@@ -10,6 +10,7 @@ then
     stow --verbose=2 xdg
     stow --verbose=2 ssh
     stow --verbose=2 redshift
+    stow --verbose=2 firefox
 
     sudo stow --verbose=2 pacman -t /
     sudo stow --verbose=2 keyboard -t /
