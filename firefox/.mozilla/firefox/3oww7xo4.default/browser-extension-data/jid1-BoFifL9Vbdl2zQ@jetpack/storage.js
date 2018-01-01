@@ -1,1 +1,1 @@
-{"showIconBadge":true,"blockMissing":false,"disablePrefetch":true,"stripMetadata":true,"whitelistedDomains":{},"amountInjected":1}
+{"showIconBadge":true,"blockMissing":false,"disablePrefetch":true,"stripMetadata":true,"whitelistedDomains":{},"amountInjected":2}
