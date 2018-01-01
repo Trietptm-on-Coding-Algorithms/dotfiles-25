@@ -7,9 +7,10 @@ bindkey -e
 
 zstyle :compinstall filename '/home/cam/.zshrc'
 
-autoload -Uz compinit promptinit
+autoload -Uz compinit promptinit colors
 compinit
 promptinit
+colors
 
 prompt walters
 
@@ -73,7 +74,7 @@ alias :Q=' exit'
 alias :x=' exit'
 alias cd..='cd ..'
 
-export PS1="[%D - %*] %d %% "
+export PS1="[%D - %*] %F{cyan}%d%F{white} $ "
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
