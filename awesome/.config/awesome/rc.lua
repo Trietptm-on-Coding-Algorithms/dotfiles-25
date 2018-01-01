@@ -384,7 +384,7 @@ globalkeys = awful.util.table.join(
     -- Brightness
     awful.key({ }, "F7", function () awful.util.spawn("xbacklight -inc 10") end,
               {description = "+10%", group = "hotkeys"}),
-    awful.key({ }, "F8", function () awful.util.spawn("xbacklight -dec 10") end,
+    awful.key({ }, "F6", function () awful.util.spawn("xbacklight -dec 10") end,
               {description = "-10%", group = "hotkeys"}),
 
     -- ALSA volume control
@@ -622,6 +622,10 @@ awful.rules.rules = {
     -- Set Discord to map to msg.
     { rule = { class = "discord" },
       properties = { screen = 1, tag = awful.util.tagnames[4] } },
+    
+    -- Set Spotify to map to etc.
+    { rule = { class = "Spotify" },
+      properties = { screen = 1, tag = awful.util.tagnames[5] } },
 
     { rule = { class = "Gimp", role = "gimp-image-window" },
           properties = { maximized = true } },
@@ -710,5 +714,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Autostart
-awful.spawn("firefox")
-awful.spawn("keepassx2")
+awful.spawn("firefox", {floating = true})
+awful.spawn("keepassx2", {floating = true})
+awful.spawn("redshift")
