@@ -1,0 +1,40 @@
+#!/bin/sh
+
+B='#00000000'  # blank
+C='#ffffff22'  # clear ish
+D='#31a354cc'  # default
+T='#b7b8b9ee'  # text
+W='#e31a1cbb'  # wrong
+V='#dca060cc'  # verifying
+
+i3lock \
+--insidevercolor=$C   \
+--ringvercolor=$V     \
+\
+--insidewrongcolor=$C \
+--ringwrongcolor=$W   \
+\
+--insidecolor=$B      \
+--ringcolor=$D        \
+--linecolor=$B        \
+--separatorcolor=$D   \
+\
+--textcolor=$T        \
+--timecolor=$T        \
+--datecolor=$T        \
+--layoutcolor=$T      \
+--keyhlcolor=$W       \
+--bshlcolor=$W        \
+\
+--screen 0            \
+--blur 5              \
+--clock               \
+--indicator           \
+--timestr="%H:%M:%S"  \
+--datestr="%Y-%m-%d" \
+--keylayout 2         \
+
+# --veriftext="Drinking verification can..."
+# --wrongtext="Nope!"
+# --textsize=20
+# --modsize=10

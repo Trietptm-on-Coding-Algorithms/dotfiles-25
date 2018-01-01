@@ -14,6 +14,7 @@ then
     stow --verbose=2 gtk3
 
     sudo stow --verbose=2 pacman -t /
+    sudo stow --verbose=2 bin -t /
     sudo stow --verbose=2 keyboard -t /
 else
     echo "ERROR: CD into the dotfiles dir."
