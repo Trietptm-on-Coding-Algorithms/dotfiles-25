@@ -286,6 +286,8 @@ globalkeys = awful.util.table.join(
             if client.focus then client.focus:raise() end
         end,
         {description = "focus right", group = "client"}),
+
+
     awful.key({ modkey,           }, "w", function () awful.util.mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
 
@@ -466,13 +468,19 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"})
     --]]
-
-    -- dmenu
+    
+    -- lock screen
     awful.key({ modkey }, "d", function ()
         awful.spawn(string.format("rofi -modi window,drun -show drun",
         beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
 		end,
         {description = "show dmenu", group = "launcher"}),
+
+    -- dmenu
+    awful.key({ modkey }, "l", function ()
+        awful.spawn("i3lock-color")
+		end,
+        {description = "lock screen", group = "launcher"}),
 
     -- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
