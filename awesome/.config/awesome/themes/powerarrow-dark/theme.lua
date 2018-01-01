@@ -14,7 +14,7 @@ local os    = { getenv = os.getenv }
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow-dark"
 theme.wallpaper                                 = theme.dir .. "/wall.png"
-theme.font                                      = "xos4 Terminus 9"
+theme.font                                      = "Iosevka 10"
 theme.fg_normal                                 = "#DDDDFF"
 theme.fg_focus                                  = "#EA6F81"
 theme.fg_urgent                                 = "#CC9393"
@@ -102,7 +102,7 @@ local clock = awful.widget.watch(
 theme.cal = lain.widget.calendar({
     attach_to = { clock },
     notification_preset = {
-        font = "xos4 Terminus 10",
+        font = "Iosevka 10",
         fg   = theme.fg_normal,
         bg   = theme.bg_normal
     }
@@ -193,7 +193,7 @@ local temp = lain.widget.temp({
 local fsicon = wibox.widget.imagebox(theme.widget_hdd)
 theme.fs = lain.widget.fs({
     options  = "--exclude-type=tmpfs",
-    notification_preset = { fg = theme.fg_normal, bg = theme.bg_normal, font = "xos4 Terminus 10" },
+    notification_preset = { fg = theme.fg_normal, bg = theme.bg_normal, font = "Iosevka 10" },
     settings = function()
         widget:set_markup(markup.font(theme.font, " " .. fs_now.used .. "% "))
     end

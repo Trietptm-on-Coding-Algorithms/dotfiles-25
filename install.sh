@@ -11,6 +11,7 @@ then
     stow --verbose=2 ssh
     stow --verbose=2 redshift
     stow --verbose=2 firefox
+    stow --verbose=2 gtk3
 
     sudo stow --verbose=2 pacman -t /
     sudo stow --verbose=2 keyboard -t /
