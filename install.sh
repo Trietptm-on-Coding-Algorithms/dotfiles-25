@@ -9,6 +9,7 @@ then
     stow --verbose=2 xorg
     stow --verbose=2 xdg
     stow --verbose=2 ssh
+    stow --verbose=2 redshift
 
     sudo stow --verbose=2 pacman -t /
     sudo stow --verbose=2 keyboard -t /
