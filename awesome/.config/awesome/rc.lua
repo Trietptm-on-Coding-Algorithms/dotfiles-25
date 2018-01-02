@@ -629,8 +629,8 @@ awful.rules.rules = {
     { rule = { class = "Keepassx2" },
       properties = { screen = 1, tag = awful.util.tagnames[3] } },
 
-    -- Set Discord to map to msg.
-    { rule = { class = "discord" },
+    -- Set Pidgin to map to msg.
+    { rule = { class = "Pidgin" },
       properties = { screen = 1, tag = awful.util.tagnames[4] } },
     
     -- Set Spotify to map to etc.
@@ -727,3 +727,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.spawn("firefox")
 awful.spawn("keepassx2", {floating = true})
 awful.spawn("redshift")
+awful.spawn("pidgin")
