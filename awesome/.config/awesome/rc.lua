@@ -478,7 +478,7 @@ globalkeys = awful.util.table.join(
 
     -- dmenu
     awful.key({ modkey }, "l", function ()
-        awful.spawn("i3lock-color")
+        awful.spawn("betterlockscreen -l dimblur")
 		end,
         {description = "lock screen", group = "launcher"}),
 
