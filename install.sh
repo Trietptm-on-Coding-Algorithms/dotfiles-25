@@ -15,7 +15,7 @@ then
 
     sudo stow --verbose=2 pacman -t /
     sudo stow --verbose=2 bin -t /
-    sudo stow --verbose=2 keyboard -t /
+    sudo stow --verbose=2 input -t /
 else
     echo "ERROR: CD into the dotfiles dir."
     exit 1

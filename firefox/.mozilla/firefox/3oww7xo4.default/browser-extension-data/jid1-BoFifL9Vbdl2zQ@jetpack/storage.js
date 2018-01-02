@@ -1,1 +1,1 @@
-{"showIconBadge":true,"blockMissing":false,"disablePrefetch":true,"stripMetadata":true,"whitelistedDomains":{},"amountInjected":2}
+{"showIconBadge":true,"blockMissing":false,"disablePrefetch":true,"stripMetadata":true,"whitelistedDomains":{"beta.speedtest.net":true},"amountInjected":44}
