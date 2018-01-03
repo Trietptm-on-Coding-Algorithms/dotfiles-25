@@ -86,9 +86,9 @@ awful.util.tagnames = { "web", "cmd", "pwd", "msg", "etc" }
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
+    --awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
+    --awful.layout.suit.tile.top,
     --awful.layout.suit.fair,
     --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
@@ -629,10 +629,6 @@ awful.rules.rules = {
     { rule = { class = "Keepassx2" },
       properties = { screen = 1, tag = awful.util.tagnames[3] } },
 
-    -- Set Pidgin to map to msg.
-    { rule = { class = "Pidgin" },
-      properties = { screen = 1, tag = awful.util.tagnames[4] } },
-    
     -- Set Spotify to map to etc.
     { rule = { class = "Spotify" },
       properties = { screen = 1, tag = awful.util.tagnames[5] } },
@@ -723,8 +719,10 @@ client.connect_signal("focus",
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+-- Tag Layouts
+awful.layout.set(awful.layout.suit.tile , awful.tag.find_by_name(awful.screen.focused(), "msg"))
+
 -- Autostart
-awful.spawn("firefox")
+awful.spawn("firefox", {maximized_vertical = true, maximized_horizontal = true})
 awful.spawn("keepassx2", {floating = true})
 awful.spawn("redshift")
-awful.spawn("pidgin")
