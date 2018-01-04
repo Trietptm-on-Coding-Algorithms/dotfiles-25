@@ -153,7 +153,7 @@ mode "$mode_system" {
     bindsym l exec "betterlockscreen -l dimblur", mode "default"
     bindsym e exec "i3-msg exit", mode "default"
     bindsym r exec "systemctl reboot", mode "default"
-    bindsym Shift+s exec "systemctl shutdown", mode "default"
+    bindsym Shift+s exec "systemctl poweroff", mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -170,4 +170,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Autostart applications
 exec --no-startup-id "firefox"
 exec --no-startup-id "keepassx2"
-exec --no-startup-id "urxvt"
+exec --no-startup-id i3-msg 'workspace 2: cmd; exec urxvt'
+
+# Switch to default workspace.
+exec --no-startup-id i3-msg 'workspace 1: web'
