@@ -1,0 +1,1 @@
+{"state":{"mode":"normal","last_ex_str":"scrollline 10","cmdHistory":["set searchengine startpage","open reddit","help"]}}
