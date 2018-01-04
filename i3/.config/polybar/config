@@ -31,9 +31,6 @@ line-size = 1
 line-color = #f00
 
 border-size = 0
-border-color = #00000000
-
-border-top-size = 3
 
 padding-left = 0
 padding-right = 1
@@ -89,6 +86,8 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
+strip-wsnumbers = true
+pin-workspaces = true
 
 ; Available tokens:
 ;   %mode%
@@ -103,7 +102,7 @@ label-mode-background = #e60053
 ;   %index%
 ;   %output%
 ; Default: %icon%  %name%
-label-focused = %index%
+label-focused = %name%
 label-focused-foreground = #ffffff
 label-focused-background = #3f3f3f
 label-focused-underline = ${colors.primary}
@@ -114,7 +113,7 @@ label-focused-padding = 4
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-unfocused = %index%
+label-unfocused = %name%
 label-unfocused-padding = 4
 
 ; Available tokens:
@@ -122,7 +121,7 @@ label-unfocused-padding = 4
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-visible = %index%
+label-visible = %name%
 label-visible-underline = #555555
 label-visible-padding = 4
 
@@ -131,7 +130,7 @@ label-visible-padding = 4
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-padding = 4
 
 [module/mpd]

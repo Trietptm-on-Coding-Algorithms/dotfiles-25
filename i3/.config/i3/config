@@ -19,7 +19,7 @@ set_from_resource $white2 color14 #fcfdfe
 
 # Actual window colours
 # class                 border  backgr. text    indicator child_border
-client.focused          $black2 $black  $black  $red      $black2
+client.focused          $black2 $black  $black  $green    $black2
 client.focused_inactive $black  $black  $white  $black    $black
 client.unfocused        $black  $black  $white  $black    $black
 client.urgent           $red    $black  $white  $red      $black
@@ -96,29 +96,31 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# workspaces
+set $ws1 "1: web"
+set $ws2 "2: cmd"
+set $ws3 "3: pwd"
+set $ws4 "4: msg"
+set $ws5 "5: etc"
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+
+# class assignment to workspaces
+assign [class="Firefox"] $ws1
+assign [class="Keepassx2"] $ws3
+assign [class="discord"] $ws4 
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -152,3 +154,8 @@ exec --no-startup-id "sh $HOME/.fehbg"
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Autostart applications
+exec --no-startup-id "firefox"
+exec --no-startup-id "keepassx2"
+exec --no-startup-id "urxvt"
