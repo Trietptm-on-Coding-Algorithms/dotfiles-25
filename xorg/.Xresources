@@ -41,4 +41,4 @@ URxvt.font: xft:Iosevka:size=10
 URxvt.letterSpace: -1
 
 URxvt*depth: 32
-URxvt*background: rgba:000C/000D/000E/9999
+URxvt*background: rgba:000C/000D/000E/cccc
