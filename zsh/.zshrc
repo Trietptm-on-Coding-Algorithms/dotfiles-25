@@ -74,6 +74,9 @@ alias :Q=' exit'
 alias :x=' exit'
 alias cd..='cd ..'
 
+## Diceware defaults
+alias diceware='diceware -d " " -c -w en_eff'
+
 export PS1="[%D - %*] %F{cyan}%d%F{white} $ "
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

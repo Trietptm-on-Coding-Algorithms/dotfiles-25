@@ -2,7 +2,7 @@
 
 if [[ ":$PWD:" == *"dotfiles"* ]];
 then
-    stow --verbose=2 awesome
+    stow --verbose=2 i3
     stow --verbose=2 rofi
     stow --verbose=2 vim
     stow --verbose=2 zsh
